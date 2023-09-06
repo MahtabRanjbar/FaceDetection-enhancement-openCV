@@ -17,7 +17,7 @@ The Face Detection App is a simple web application built with Streamlit and Open
 1. Clone the repository:
 
 ```bash
-git clone [repository_url]
+git clone https://github.com/MahtabRanjbar/FaceDetection-enhancement-openCV.git
 ```
 2. install the required dependencies:
 
