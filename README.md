@@ -29,7 +29,7 @@ pip install -r requirements.txt
 1. run the application
 
 ```bash
-streamlit run app.py
+streamlit run src/app.py
 ```
 
 2. Open the provided URL in your web browser.
