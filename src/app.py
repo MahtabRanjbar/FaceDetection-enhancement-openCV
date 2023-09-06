@@ -1,7 +1,7 @@
 import streamlit as st
 
-from model import ImageModel
-from view import ImageView
+from src.model import ImageModel
+from src.view import ImageView
 
 if __name__ == "__main__":
     app = ImageView(ImageModel())

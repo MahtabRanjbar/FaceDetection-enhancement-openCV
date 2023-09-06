@@ -3,10 +3,10 @@ import numpy as np
 import streamlit as st
 from PIL import Image, ImageEnhance
 
+
 class ImageView:
     def __init__(self, processor):
         self.processor = processor
-
 
     def run(self):
         st.set_option("deprecation.showfileUploaderEncoding", False)
@@ -25,19 +25,17 @@ class ImageView:
     def detect_activity(self):
         st.subheader("Image Detection")
 
-        image_file = st.file_uploader(
-            "Upload Image", type=["jpg", "jpeg", "png"]
-        )
+        image_file = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png"])
 
         if image_file is not None:
             our_image = self.processor.load_image(image_file)
             st.image(our_image, caption="Original Image", use_column_width=True)
-            
+
             enhance_type = st.sidebar.radio(
                 "Enhance Type",
                 ["Original", "Gray-Scale", "Contrast", "Brightness", "Blurring"],
             )
-            
+
             if enhance_type == "Gray-Scale":
                 new_img = np.array(our_image.convert("RGB"))
                 img = cv2.cvtColor(new_img, 1)
@@ -91,9 +89,6 @@ class ImageView:
                 elif feature_choice == "Cannize":
                     result_canny = self.processor.cannize_image(our_image)
                     st.image(result_canny)
-
-                
-        
 
     def about_activity(self):
         st.subheader("About")
